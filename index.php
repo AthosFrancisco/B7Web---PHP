@@ -11,5 +11,10 @@ $bolo2 = [
     ...$ingredientes,
     'leite'
 ];
+?>
 
-print_r($bolo2);
+<pre>
+
+<?php print_r($bolo2); ?>
+
+</pre>
