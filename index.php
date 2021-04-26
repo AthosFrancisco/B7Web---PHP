@@ -1,23 +1,9 @@
 <?php
 
-for($i = 1; $i <= 20; $i++)
-{
-    for($j = 0; $j < $i; $j++)
-    {
-        echo '-';
-    }
-
-    echo '<br/>';
+function somar(int $n1, int $n2 = 0, int $n3 = 0){
+    return $n1+$n2+$n3;
 }
 
-echo '<br/>';
+$resultado = somar(3, 4);
 
-for($i = 0; $i < 10; $i++)
-{
-    for($j = 0; $j < 10; $j++)
-    {
-        echo '-';
-    }
-
-    echo '<br/>';
-}
+echo $resultado;
