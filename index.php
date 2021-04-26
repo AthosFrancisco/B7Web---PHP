@@ -1,20 +1,11 @@
 <?php
 
-function somar($n1, $n2, &$total){
-    $total = $n1+$n2;
-}
+$dizimo = function(int $valor){
+    return $valor * 0.1;
+};
 
-$x = 5;
-$y = 12;
-$total;
+echo 'dizimo: '.$dizimo(100).'<br/>';
 
-$resultado = somar($x, $y, $total);
+$oferta = $dizimo;
 
-echo $x.' + '.$y.' = '.$total.'<br/>';
-
-$lista = [3,2,1];
-
-//função nativa do php com passagem de parâmetro por referência
-sort($lista);
-
-print_r($lista);
+echo 'oferta: '.$oferta(80);
