@@ -1,11 +1,7 @@
 <?php
 
-$dizimo = function(int $valor){
-    return $valor * 0.1;
-};
+$dizimo = fn($valor) => $valor * 0.1;
 
-echo 'dizimo: '.$dizimo(100).'<br/>';
+$somar = fn(int $n1, int $n2 = 0) => $n1 + $n2;
 
-$oferta = $dizimo;
-
-echo 'oferta: '.$oferta(80);
+echo $dizimo(100);
