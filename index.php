@@ -1,9 +1,20 @@
 <?php
 
-function somar(int $n1, int $n2 = 0, int $n3 = 0){
-    return $n1+$n2+$n3;
+function somar($n1, $n2, &$total){
+    $total = $n1+$n2;
 }
 
-$resultado = somar(3, 4);
+$x = 5;
+$y = 12;
+$total;
 
-echo $resultado;
+$resultado = somar($x, $y, $total);
+
+echo $x.' + '.$y.' = '.$total.'<br/>';
+
+$lista = [3,2,1];
+
+//função nativa do php com passagem de parâmetro por referência
+sort($lista);
+
+print_r($lista);
