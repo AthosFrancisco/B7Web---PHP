@@ -1,7 +1,18 @@
 <?php
 
-$dizimo = fn($valor) => $valor * 0.1;
+$diaSemanaArray = [
+    'Domingo',
+    'Segunda-Feira',
+    'Terça-Feira',
+    'Quarta-Feira',
+    'Quinta-Feira',
+    'Sexta-Feira',
+    'Sábado'
+];
 
-$somar = fn(int $n1, int $n2 = 0) => $n1 + $n2;
+$data = '2021-10-05';
+$dataInTime = strtotime($data);
 
-echo $dizimo(100);
+$diaSemana = date('w', strtotime($dataInTime));
+
+echo date('d/m/Y', $dataInTime).' - '.$diaSemanaArray[$diaSemana];
