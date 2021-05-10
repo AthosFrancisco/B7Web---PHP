@@ -1,12 +1,15 @@
 <?php
-session_start();
 
-if($_SESSION['nome'])
-{
-    echo 'Olá, '.$_SESSION['nome'].' - <a href="sair.php">Sair</a><br/>';
-} 
-else
-{
-    header("Location: login.php");
-    exit;
-}
+$texto = file_get_contents("text.txt");
+
+echo $texto;
+
+$novoTexto = $texto."\nAthos Francisco";
+
+file_put_contents("text.txt", $novoTexto);
+
+$texto = explode("\n", $texto);
+
+
+echo '<br><br>LINHAS: '.count($texto);
+
