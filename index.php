@@ -1,15 +1,38 @@
+<form method="POST">
+Qual o seu nome? <br>
+<input type="text" name="nome" id="nome">
+<br>
+<input type="submit" value="Enviar">
+</form>
+
 <?php
 
-$texto = file_get_contents("text.txt");
+$nome = filter_input(INPUT_POST, "nome");
 
-echo $texto;
+$arquivo = file_get_contents("text.txt");
 
-$novoTexto = $texto."\nAthos Francisco";
+if($nome)
+{
+    $arquivo = $arquivo.(strlen($arquivo) > 0 ? "," : "").$nome;
 
-file_put_contents("text.txt", $novoTexto);
+    file_put_contents("text.txt", $arquivo);
+}
 
-$texto = explode("\n", $texto);
+echo '<h3>Lista de nomes</h3>
+      <ul>';
 
+    $arquivoArray = explode(",", $arquivo);
 
-echo '<br><br>LINHAS: '.count($texto);
+    if(strlen($arquivo) > 0)
+    {
+        foreach($arquivoArray as $key => $item)
+        {
+            echo '<li>'
+                    .$item
+                    .' - <a href="excluir.php?index='.$key.'">Excluir</a>'
+                .'</li>';
+        }
+    }
 
+echo '</ul>';
+?>
