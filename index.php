@@ -1,8 +1,6 @@
-<?php
-
-// rename("teste.txt", "teste2.txt");
-// rename("teste2.txt", "pasta/teste2.txt");
-copy("pasta/teste2.txt", "teste.txt");
-
-// unlink("text.txt");
-// echo 'Arquivo excluído com sucesso!';
+<form action="recebedor.php" method="POST" enctype="multipart/form-data">
+    <input type="file" name="arquivo" id="arquivo">
+    <br>
+    <br>
+    <input type="submit" value="Enviar">
+</form>
