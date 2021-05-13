@@ -1,6 +1,12 @@
-<form action="recebedor.php" method="POST" enctype="multipart/form-data">
-    <input type="file" name="arquivo" id="arquivo">
-    <br>
-    <br>
-    <input type="submit" value="Enviar">
-</form>
+<?php
+require 'Calculadora.php';
+
+$calc = new Calculadora();
+$calc->add(10);
+$calc->divide(5);
+$calc->sub(3);
+$calc->multiply(3);
+$calc->add(20);
+$calc->sub(30);
+
+echo $calc->getValor();
