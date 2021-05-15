@@ -1,5 +1,7 @@
 <?php
 
+namespace classes;
+
 class Calculadora
 {
     private float $valor = 0;

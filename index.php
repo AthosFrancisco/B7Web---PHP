@@ -1,5 +1,7 @@
 <?php
-require 'Calculadora.php';
+require 'vendor/autoload.php';
+
+use classes\Calculadora;
 
 $calc = new Calculadora();
 $calc->add(10);
