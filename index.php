@@ -1,14 +1,10 @@
 <?php
-require 'vendor/autoload.php';
+require 'config.php';
+// $pdo = new PDO("mysql:dbname=test;host:localhost", "root", "");
 
-use classes\Calculadora;
+$sql = $pdo->query('SELECT * FROM usuarios');
 
-$calc = new Calculadora();
-$calc->add(10);
-$calc->divide(5);
-$calc->sub(3);
-$calc->multiply(3);
-$calc->add(20);
-$calc->sub(30);
+$sql = $sql->fetchAll( PDO::FETCH_ASSOC );
 
-echo $calc->getValor();
+echo '<pre>';
+print_r($sql);
